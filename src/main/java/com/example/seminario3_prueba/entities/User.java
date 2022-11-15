@@ -43,6 +43,14 @@ public class User {
     @JoinTable(name="user_role_relate", joinColumns = @JoinColumn(name="user_id"),
      inverseJoinColumns=@JoinColumn(name="role_id"))
     private Set<Role> roles = new HashSet<>();
+
+    @NotNull
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name="user_locals_relate", joinColumns = @JoinColumn(name="user_id"),
+            inverseJoinColumns=@JoinColumn(name="local_id"))
+    private Set<Local> locals = new HashSet<>();
+
+
     public User() {
     }
 
