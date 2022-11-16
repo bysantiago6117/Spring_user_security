@@ -17,6 +17,11 @@ public class BrandService {
 
     public void save(Brand brand){brandReposity.save(brand);}
 
+    public List<Brand> FindAll(){
+        return brandReposity.findAll();
+    }
+
+
     public Set<Product> ListProductsbyname(String name){
           List<Brand> marcasregistradas = brandReposity.findAll();
           for(int i = 0; i < marcasregistradas.size(); i++ ){
